@@ -1,0 +1,322 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX book template                           %%
+%% Author:  Amber Jain (http://amberj.devio.us/) %%
+%% License: ISC license                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt,titlepage,twoside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx,cleveref}
+\usepackage[hmarginratio=3:2]{geometry}
+\usepackage[english]{babel}
+%\usepackage[english]{palatino}
+\usepackage[perpage]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% Centre the picture and the title vertically with cc (only works with titlepage mode)
+\usepackage[cc]{titlepic}
+% For \includegraphics
+\usepackage{graphicx}
+
+\usepackage[titletoc]{appendix}
+%\usepackage{avant}
+%% Avant Garde
+%\usepackage[scaled]{helvet}
+%% Helvetica, scaled 95%
+
+\usepackage{bookman,longtable,multirow}
+
+
+%\setmainfont{Arial}
+%% fontspec reverts to CM, so reset to Times
+%\setsansfont{Optima}
+%% set sans-serif font
+%\usepackage{sectsty}
+%% to override section fonts
+%\allsectionsfont{\fontspec{Optima}}
+%% set header font
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 'dedication' environment: To add a dedication paragraph at the start of book %
+% Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.66\textwidth}
+   \raggedright
+}
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter quote at the start of chapter        %
+% Source: http://tex.stackexchange.com/a/53380 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+
+\usepackage{titlesec}
+
+\newcommand*{\justifyheading}{\centering}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\justifyheading}{\chaptertitlename\ \thechapter}
+  {14pt}{\Huge}
+  \titleformat{\section}[display]
+  {\normalfont\huge\bfseries\justifyheading}{\chaptertitlename\ \thechapter}
+  {12pt}{\large}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First page of book which contains 'stuff' like: %
+%  - Book title, subtitle                         %
+%  - Book author name                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Book's title and subtitle
+\title{\Huge \textbf{Answer to History}  }%\footnote{This is a footnote.} \\ \huge Sample book subtitle \footnote{This is yet another footnote.}}
+% Author
+\author{\textsc{Mohammad Reza Pahlavi}\thanks{\textsc{The Shah of Iran}}}
+\date{}
+
+\titlepic{\includegraphics[width=0.5\textwidth]{Imperial_Coat_of_Arms_of_Iran.pdf}}
+\begin{document}
+
+\frontmatter
+\maketitle
+
+
+\clearpage
+
+%% copyrightpage
+\begin{center}\bfseries\textsc{Author's Note}\end{center}
+It is my intention that the American version of Answer to History be the definitive text.
+\begin{flushright}M. R. Pahlavi\end{flushright}
+\begingroup
+\footnotesize
+\parindent 0pt
+\parskip \baselineskip
+%\textcopyright{} 2007, 2009, 2010 Peter R. Wilson \\
+%All rights reserved.
+\vfill\vfill
+First published in the United States of America 1980
+
+Copyright \textcopyright{} 1980 (this edition) Mohammad Reza Pahlavi
+
+Copyright \textcopyright{} 1980 Translation Michael Joseph Ltd.
+
+Copyright \textcopyright{} 1979 Editions-Albin Michel
+
+All rights reserved
+
+Designed by Louis A. Ditizio
+
+Printed in the United States of America
+\vfill
+
+STEIN AND DAY/Publishers/Scaibotough House
+
+Briarcliff Manor, N.Y. 10510
+%
+%    This work may be distributed and/or modified under the conditions
+%of the LaTeX Project Public License, either version~1.3 of this license
+%or (at your option) any later version. The latest version is in \\
+%\hspace*{2em} \url{http://www.latex-project.org/lppl.txt} \\
+%and version~1.3 or later is part of all distributions of LaTeX
+%version 2005/12/01 or later.
+%
+%    This work has the LPPL maintenance status `maintained'.
+%
+%    The Current Maintainer of this work is Peter Wilson.
+%
+%    The work consists of the file \texttt{titlepages.tex} and the
+%derived file \texttt{titlepages.pdf}.
+
+%\begin{comment}
+%%%% Until 2009 this work was under the Open Publication License as:
+%This material may be distributed only subject to the terms and conditions
+%set forth in the Open Publication License v1.0 or later (the latest
+%version is presently available at \url{http://www.opencontent.org/openpub/}).
+%Distribution of substantively modified versions of this document is
+%prohibited without the explicit permission of the copyright holder.
+%Distribution of the work or derivative of the work in any standard
+%(paper) book form is prohibited unless prior permission is obtained
+%from the copyright holder.
+%
+%
+%The procedures and applications presented in this work have been
+%included for their instructional value. They have been tested 
+%with care but are not guaranteed for any particular purpose.
+%The publisher does not offer any warranties or representations,
+%nor does it accept any liabilities with respect to the 
+%programs or applications.
+%\end{comment}
+%
+%The paper used in this publication may meet the minimum 
+%requirements of the American National Standard for 
+%Information Sciences --- Permanence of Paper for Printed
+%Library Materials, ANSI Z39.48--1984.
+
+%\begin{center}
+% 12 11 10 09 08 07\hspace{2em}8 7 6 5 4 3 %2 
+%\end{center}
+%
+%\begin{center}
+%\begin{tabular}{ll}
+%First edition:  & January 2007 \\
+%Second impression, with minor extensions & January 2009 \\
+%Third impression, with minor extensions & July 2010 
+%\end{tabular}
+%\end{center}
+
+
+%Wilson, Peter.\\
+%\hspace*{2em} Some Examples of Title Pages / Peter Wilson. -- \\
+%\hspace*{1em} 1st Herries Press ed. \\
+%\hspace*{2em} p. \hspace*{2em} cm. \\
+%\hspace*{2em} Includes illustrations, bibliographical references and index. \\
+%\hspace*{2em} ISBN \\
+%\hspace*{2em} 1. Book design \hspace*{2em} I. Title
+%
+%
+%\vfill
+%
+%Printed in the World
+%
+%The Herries Press, \\
+%Normandy Park, WA \\
+%\texttt{herries dot press (at) earthlink dot net}
+
+%%%%{\LARGE\plogo}
+\vspace*{2\baselineskip}
+
+
+\endgroup
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a dedication paragraph to dedicate your book to someone %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{dedication}
+I dedicate this book to the memory of all those Iranian men and women who have suffered and died for their country.
+\end{dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mainmatter
+
+%%%%%%%%%%%
+% Preface %
+%%%%%%%%%%%
+\chapter*{Publisher's Preface}
+Some books of history become part of history; some books of current events are themselves current events. This book is both. 
+
+The final draft of Answer to History was completed by the Shah just days before he died on July 27, 1980. Completing it was, in the Shah’s words, “a race against time.” In it, he shows how the United States, once the most powerful country on earth, found itself hostage to the whims of Iran, a land few Americans knew much about. In telling his own story, the Shah shows clearly that Iran has become a battleground between the U.S. and the Soviet ER Union, which for over half a century has pursued its goals with increasing success. In the “slide into chaos” precipitated by the Khomeini regime, the Shah saw the ultimate beneficiary being the U.S.S.R., which will reach the apogee of its strength no later than 1983, with the West facing “a decade of harrowing danger.”
+
+Answer to History begins with what really happened during the Shah’s period of exile in the Bahamas, Mexico, the U.S., Panama, and finally Egypt. It goes on to cover all of the momentous experiences of the Shah’s reign, a book full of heroes and villains, with many surprises for the American reader as to who the villains really were and are. 
+
+The Shah discloses backstage developments in today’s politics of oil. He reveals his relations with American presidents from Roosevelt to Carter; leaders such as Churchill, DeGaulle, and Tito; and strategists such as Henry Kissinger. He deals with SAVAK and the CIA's role in helping to train its agents, and with the double standard of the West, whose human rights advocates were critical of some of the practices of his regime, but are silent about the reign of terror that succeeded him. The Shah shows how the interplay between the Black and the Red--the 14th-century clergy and the Tudeh Party loyal to the Soviets--blocked for their own purposes his proudest achievements: the White Revolution in which the Shah introduced land reform, worked toward the liberation of women, and raised the standard of living of his people, providing disparate ethnic groups with pride in the 2,500-year-old culture of Persia. When the enemies of his reign took to the streets, the Shah felt that he reacted not too strongly, but not strongly enough. His chapters on “The Unholy Alliance of Red and Black” and “The Terror” are informative and alarming. 
+
+Mohammed Reza Pahlavi considered himself the staunchest ally of the United States in the Persian Gulf area. In his Answer to History he reveals the forces that betrayed him, and left the U.S. without an economically and militarily strong ally in a critical part of the world. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Give credit where credit is due. %
+% Say thanks!                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Acknowledgments}
+%It is my intention that the American version of Answer to History be the definitive text. 
+%\mbox{}\\
+%%\mbox{}\\
+%
+%
+%\noindent M. R. Pahlavi \\
+
+
+%%%%%%%%%%%%%%%%
+% NEW CHAPTER! %
+%%%%%%%%%%%%%%%%
+\chapter{My Exile}\label{ch01}
+\input{ch01-my-exile.tex}
+
+\chapter{Lessons of the Past}\label{ch02}
+\input{ch02-lessons-of-the-past.tex}
+
+\chapter{From Strength to Servitude}\label{ch03}
+\input{ch03-from-strength-to-servitude.tex}
+
+\chapter{The Road to India and Oil}\label{ch04}
+\input{ch04-road-to-india-and-oil.tex}
+
+\chapter{My Father, Reza Shah The Great}\label{ch05}
+\input{ch05-my-father.tex}
+
+\chapter[``Young Man'']{My Early Years}\label{ch06}
+\input{ch06-my-early-years.tex}
+
+\chapter[Mossadegh]{Mossadegh or Demagogy of Power}\label{ch07}
+\input{ch07-mossadegh.tex}
+
+\chapter[From the Age of Petroleum to the Atomic Age]{From Petroleum to the Atomic Age}\label{ch08}
+\input{ch08-from-petroleum.tex}
+
+\chapter{The White Revolution}\label{ch09}
+\input{ch09-the-white-revolution.tex}
+
+\chapter{Foreign Policy}\label{ch10}
+\input{ch10-foreign-policy.tex}
+
+\chapter{The Unholy Alliance of Red and Black}\label{ch11}
+\input{ch11-the-unholy-alliance.tex}
+
+\chapter{From Hope to Despair}\label{ch12}
+\input{ch12-from-hope-to-despair.tex}
+
+\chapter{The Terror}\label{ch13}
+\input{ch13-the-terror.tex}
+
+\chapter{Conclusions}\label{ch14}
+\input{ch14-conclusions.tex}
+\begin{appendices}
+\appendix
+\renewcommand{\thechapter}{\Roman{chapter}}
+\noappendicestocpagenum
+\addappheadtotoc
+
+\chapter{\textsc{Principles Of Iran's White Revolution}}\label{app01}
+\input{app01}
+\chapter{\textsc{National Health Organizations}}\label{app02}
+\input{app02}
+\chapter{\textsc{Iranian Armed Forces: 1982}}\label{app03}
+\input{app03}
+\end{appendices}
+%\begin{chapquote}{Author's name, \textit{Source of this quote}}
+%``This is a quote and I don't know who said this.''
+%\end{chapquote}
+\backmatter
+%\chapter{Index}
+%\input{index.tex}
+\end{document}
